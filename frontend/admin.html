@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Commerce - Vista Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Vista Admin</h1>
+    <nav>
+      <a href="index.html">Utente</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="grid">
+      <div class="card">
+        <h2>Aggiungi prodotto</h2>
+        <form id="addProductForm">
+          <label>Nome prodotto</label>
+          <input type="text" id="productName" required />
+
+          <label>Descrizione</label>
+          <textarea id="productDescription" required></textarea>
+
+          <label>Prezzo in crediti</label>
+          <input type="number" id="productPrice" min="0" required />
+
+          <label>Stock iniziale</label>
+          <input type="number" id="productStock" min="0" required />
+
+          <button type="submit">Aggiungi</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Assegna bonus crediti</h2>
+        <form id="bonusForm">
+          <label>Utente</label>
+          <select id="bonusUserSelect"></select>
+
+          <label>Bonus crediti</label>
+          <input type="number" id="bonusCredits" min="1" required />
+
+          <button type="submit">Assegna bonus</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Gestione stock</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Prodotto</th>
+            <th>Stock attuale</th>
+            <th>Nuovo stock</th>
+            <th>Azione</th>
+          </tr>
+        </thead>
+        <tbody id="stockTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Ultimi acquisti</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Utente</th>
+            <th>Prodotto</th>
+            <th>Quantità</th>
+            <th>Totale</th>
+          </tr>
+        </thead>
+        <tbody id="purchasesTableBody"></tbody>
+      </table>
+    </div>
+
+    <p id="adminMessage"></p>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
